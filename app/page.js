@@ -5,7 +5,7 @@ import Hero from "../src/components/Hero";
 import ProductGrid from "../src/components/ProductGrid";
 import Footer from "../src/components/Footer";
 
-export default function HomePage() {
+export default function Page() {
   const { selectedCategory, setSelectedCategory } = useShop();
 
   return (
