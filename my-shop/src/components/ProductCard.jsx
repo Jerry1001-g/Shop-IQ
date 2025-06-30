@@ -16,13 +16,13 @@ export default function ProductCard({ product }) {
       <div className="mt-4 flex space-x-2">
         <button
           onClick={() => addToCart(product)}
-          className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
+          className="bg-slate-500 text-white px-3 py-1 rounded hover:bg-slate-900"
         >
           Add to Cart
         </button>
         <button
           onClick={() => addToWishlist(product)}
-          className="bg-pink-500 text-white px-3 py-1 rounded hover:bg-pink-600"
+          className="bg-slate-500 text-white px-3 py-1 rounded hover:bg-black"
         >
           Wishlist
         </button>
