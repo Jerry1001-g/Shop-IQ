@@ -6,7 +6,7 @@ export default function ProductCard({ product }) {
   const { addToCart, addToWishlist } = useShop();
 
   return (
-    <div className="bg-white p-4 rounded shadow flex flex-col">
+    <div className="bg-white p-4 rounded flex flex-col shadow-2xl hover:shadow-lg transition-shadow duration-300">
       <Link href={`/product/${product.id}`}>
         <img src={product.image} alt={product.title} className="mb-4" />
         <h2 className="text-lg font-semibold">{product.title}</h2>
@@ -16,13 +16,13 @@ export default function ProductCard({ product }) {
       <div className="mt-4 flex space-x-2">
         <button
           onClick={() => addToCart(product)}
-          className="bg-slate-500 text-white px-3 py-1 rounded hover:bg-slate-900"
+          className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-900"
         >
           Add to Cart
         </button>
         <button
           onClick={() => addToWishlist(product)}
-          className="bg-slate-500 text-white px-3 py-1 rounded hover:bg-black"
+          className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-900"
         >
           Wishlist
         </button>
