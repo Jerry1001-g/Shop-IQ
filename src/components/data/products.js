@@ -14,7 +14,7 @@ const products = [
     description: "Portable speaker with deep bass and long battery life.",
     price: 80,
     category: "Electronics",
-    image: "/images/Bluetoothspeaker.jpg",
+    image: "/images/BluetoothSpeaker.jpg",
     rating: 4.2
   },
   {
@@ -23,7 +23,7 @@ const products = [
     description: "Track your fitness and notifications on the go.",
     price: 150,
     category: "Electronics",
-    image: "/images/Smartwatch.jpg",
+    image: "/images/SmartWatch.jpg",
     rating: 4.6
   },
   {
@@ -41,7 +41,7 @@ const products = [
     description: "Capture stunning photos and videos.",
     price: 350,
     category: "Electronics",
-    image: "/images/Digitalcamera.jpg",
+    image: "/images/DigitalCamera.jpg",
     rating: 4.4
   },
   {
@@ -158,7 +158,7 @@ const products = [
     description: "Durable and easy to clean.",
     price: 28,
     category: "Home",
-    image: "/images/Non-StickFryingPan.jpg",
+    image: "/images/Non-stickFryingPan.jpg",
     rating: 4.5
   },
   {
