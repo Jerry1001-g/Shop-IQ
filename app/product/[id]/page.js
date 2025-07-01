@@ -37,13 +37,13 @@ export default function ProductDetails() {
         <div className="flex gap-2 mt-4">
           <button
             onClick={() => addToCart(product)}
-            className="bg-slate-700 text-white px-4 py-2 rounded hover:bg-black"
+            className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-900"
           >
             Add to Cart
           </button>
           <button
             onClick={() => addToWishlist(product)}
-            className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-black"
+            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-900"
           >
             Add to Wishlist
           </button>

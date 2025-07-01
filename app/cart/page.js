@@ -2,23 +2,37 @@
 import { useShop } from "../../src/context/ShopContext";
 import Navbar from "../../src/components/Navbar";
 import Footer from "../../src/components/Footer";
+import { useState } from "react";
 
 export default function CartPage() {
   const { cart, removeFromCart } = useShop();
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  const filteredCart = cart.filter((item) =>
+    item.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const total = filteredCart.reduce((sum, item) => sum + item.price, 0);
 
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-1 container mx-auto p-4">
         <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
-        {cart.length === 0 ? (
-          <p>Your cart is empty.</p>
+        {/* Search Input */}
+        <input
+          type="text"
+          placeholder="Search in cart..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="border p-2 mb-4 w-full"
+        />
+        {filteredCart.length === 0 ? (
+          <p>No items found.</p>
         ) : (
           <>
             <ul className="space-y-4">
-              {cart.map((item, index) => (
+              {filteredCart.map((item, index) => (
                 <li
                   key={`${item.id}-${index}`}
                   className="flex items-center justify-between bg-gray-100 p-4 rounded"

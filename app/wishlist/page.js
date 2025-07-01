@@ -2,23 +2,37 @@
 import { useShop } from "../../src/context/ShopContext";
 import Navbar from "../../src/components/Navbar";
 import Footer from "../../src/components/Footer";
+import { useState } from "react";
 
 export default function WishlistPage() {
   const { wishlist, removeFromWishlist } = useShop();
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const total = wishlist.reduce((sum, item) => sum + item.price, 0);
+  const filteredWishlist = wishlist.filter((item) =>
+    item.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const total = filteredWishlist.reduce((sum, item) => sum + item.price, 0);
 
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-1 container mx-auto p-4">
         <h1 className="text-2xl font-bold mb-4">Your Wishlist</h1>
-        {wishlist.length === 0 ? (
-          <p>Your wishlist is empty.</p>
+        {/* Search Input */}
+        <input
+          type="text"
+          placeholder="Search in wishlist..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="border p-2 mb-4 w-full"
+        />
+        {filteredWishlist.length === 0 ? (
+          <p>No items found.</p>
         ) : (
           <>
             <ul className="space-y-4">
-              {wishlist.map((item, index) => (
+              {filteredWishlist.map((item, index) => (
                 <li
                   key={`${item.id}-${index}`}
                   className="flex items-center justify-between bg-gray-100 p-4 rounded"
