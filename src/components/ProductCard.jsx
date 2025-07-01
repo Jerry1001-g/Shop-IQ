@@ -6,7 +6,7 @@ export default function ProductCard({ product }) {
   const { addToCart, addToWishlist } = useShop();
 
   return (
-    <div className="bg-white p-4 rounded flex flex-col shadow-2xl hover:shadow-lg transition-shadow duration-300">
+    <div className="bg-white p-4 rounded flex flex-col shadow-2xl hover:scale-105 transition-all ease-in-out duration-300">
       <Link href={`/product/${product.id}`}>
         <img src={product.image} alt={product.title} className="mb-4" />
         <h2 className="text-lg font-semibold">{product.title}</h2>
