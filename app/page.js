@@ -14,7 +14,7 @@ export default function Page() {
       <Hero />
       <main className="container mx-auto p-4">
         <h2 className="text-xl font-bold mb-4">Filter by Category</h2>
-        <div className="flex gap-2 mb-6 flex-wrap">
+        <div className="flex gap-2 mb-6 flex-wrap ">
           {[
             "All",
             "Electronics",
@@ -28,7 +28,7 @@ export default function Page() {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3 py-1 rounded ${
+              className={`px-3 py-1 rounded cursor-pointer ${
                 selectedCategory === cat
                   ? "bg-blue-600 text-white"
                   : "bg-gray-200 text-black"

@@ -15,7 +15,7 @@ export default function ProductGrid() {
     );
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {filtered.length === 0 ? (
         <p className="col-span-full text-gray-500">No products found.</p>
       ) : (
